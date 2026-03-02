@@ -20,14 +20,20 @@ export default function ChatMentor({ userId }: { userId: number }) {
 
   return (
     <div className="rounded border border-slate-700 p-4">
-      <h3 className="mb-2 text-lg font-semibold">Chat Mentor</h3>
+      <h3 className="mb-2 text-lg font-semibold">Behavioral Feedback Summary</h3>
+      <p className="mb-3 text-sm text-slate-400">
+        This assistant provides educational risk feedback only. It does not provide stock tips,
+        predictions, or execution calls.
+      </p>
       <textarea
         className="w-full rounded bg-slate-900 p-2"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Ask about discipline and capital structure"
+        placeholder="Describe your recent decision process for disciplined feedback"
       />
-      <button className="mt-2 rounded bg-indigo-600 px-4 py-2" onClick={send}>Send</button>
+      <button className="mt-2 rounded bg-indigo-600 px-4 py-2" onClick={send}>
+        Analyze Behavior
+      </button>
       {reply && <p className="mt-3 whitespace-pre-wrap text-sm text-slate-200">{reply}</p>}
     </div>
   );
